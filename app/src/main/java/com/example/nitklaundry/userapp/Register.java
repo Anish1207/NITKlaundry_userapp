@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -45,8 +46,9 @@ public class Register extends AppCompatActivity {
         }
         mAuth=FirebaseAuth.getInstance();
         mdb= FirebaseDatabase.getInstance().getReference().child("Users");
-        mref=new Firebase("https://smartlaundry-da99b.firebaseio.com/").child("Users");
+        mref=new Firebase("https://nitklaundry.firebaseio.com/").child("Users");
         AuthData curr_user=mref.getAuth();
+        Log.i(null,"heloo");
 
 
 
@@ -76,7 +78,7 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            Log.i(null,"heloo");
                             String userid = mAuth.getCurrentUser().getUid();
                             Toast.makeText(Register.this, "You have been registered", Toast.LENGTH_SHORT).show();
                             DatabaseReference currentUser = mdb.child(userid);

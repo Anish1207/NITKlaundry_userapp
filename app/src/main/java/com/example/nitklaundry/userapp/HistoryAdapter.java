@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by Lenovo on 11/28/2016.
- */
+
 
 
      //Adapter accepts the View & Model
